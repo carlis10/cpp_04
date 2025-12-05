@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 13:21:31 by carlos            #+#    #+#             */
-/*   Updated: 2025/12/05 11:08:22 by cravegli         ###   ########.fr       */
+/*   Created: 2025/07/14 13:09:50 by carlos            #+#    #+#             */
+/*   Updated: 2025/12/05 11:34:53 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : Animal("Cat")
+Dog::Dog() : AAnimal("Dog")
 {
-	
+	std::cout << "Dog created" << std::endl;
+	this->_brain = new Brain();
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-
+	std::cout << "Dog deleted" << std::endl;
+	delete _brain;
 }
-Cat::Cat(const Cat & src) : Animal(src)
+Dog::Dog(const Dog & src) : AAnimal (src)
 {
-	
+	_brain = new Brain(*(src._brain));
 }
-
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "Miau" << std::endl;
+	std::cout << "Guau" << std::endl;
 }
 
-Cat &Cat::operator=(Cat const & src)
+Dog &Dog::operator=(Dog const & src)
 {
 	if (this != &src)
+	{
+		delete _brain;
 		this->_type = src._type;
+		this->_brain = new Brain(*(src._brain));
+	}
 	return (*this);
 }

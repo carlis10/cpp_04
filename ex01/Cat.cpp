@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:21:31 by carlos            #+#    #+#             */
-/*   Updated: 2025/07/21 13:08:03 by carlos           ###   ########.fr       */
+/*   Updated: 2025/12/05 11:14:28 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat created" << std::endl;
-	this->setName("Cat");
 	this->_brain = new Brain();
 }
 
@@ -24,9 +23,9 @@ Cat::~Cat()
 	std::cout << "Cat deleted" << std::endl;
 	delete _brain;
 }
-Cat::Cat(const Animal & src) : Animal("Cat")
+Cat::Cat(const Cat & src) : Animal(src)
 {
-	*this = src;
+	_brain = new Brain(*(src._brain));
 }
 
 void Cat::makeSound() const
@@ -34,9 +33,13 @@ void Cat::makeSound() const
 	std::cout << "Miau" << std::endl;
 }
 
-Cat &Cat::operator=(Animal const & src)
+Cat &Cat::operator=(Cat const & src)
 {
 	if (this != &src)
-		this->_type = src.getType();
+	{
+		delete _brain;
+		this->_type = src._type;
+		this->_brain = new Brain(*(src._brain));
+	}
 	return (*this);
 }

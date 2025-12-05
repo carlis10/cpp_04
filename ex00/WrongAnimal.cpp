@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 13:21:31 by carlos            #+#    #+#             */
-/*   Updated: 2025/12/05 11:08:22 by cravegli         ###   ########.fr       */
+/*   Created: 2025/07/14 12:50:46 by carlos            #+#    #+#             */
+/*   Updated: 2025/12/05 10:29:05 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongAnimal.hpp"
 
-Cat::Cat() : Animal("Cat")
+WrongAnimal::WrongAnimal()
 {
 	
 }
 
-Cat::~Cat()
-{
-
-}
-Cat::Cat(const Cat & src) : Animal(src)
+WrongAnimal::WrongAnimal(std::string type): _type(type)
 {
 	
 }
 
-void Cat::makeSound() const
+WrongAnimal::WrongAnimal (WrongAnimal const & src)
 {
-	std::cout << "Miau" << std::endl;
+	*this = src;
 }
 
-Cat &Cat::operator=(Cat const & src)
+WrongAnimal::~WrongAnimal()
+{
+	
+}
+
+void WrongAnimal::makeSound() const
+{
+	std::cout << "Wrong Animal sound" << std::endl;
+}
+std::string WrongAnimal::getType() const
+{
+	return (_type);
+}
+
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal & src)
 {
 	if (this != &src)
 		this->_type = src._type;

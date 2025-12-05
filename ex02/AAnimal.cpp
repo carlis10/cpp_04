@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 13:21:31 by carlos            #+#    #+#             */
-/*   Updated: 2025/12/05 11:08:22 by cravegli         ###   ########.fr       */
+/*   Created: 2025/07/14 12:50:46 by carlos            #+#    #+#             */
+/*   Updated: 2025/07/15 11:38:38 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "AAnimal.hpp"
 
-Cat::Cat() : Animal("Cat")
+AAnimal::AAnimal()
 {
 	
 }
 
-Cat::~Cat()
-{
-
-}
-Cat::Cat(const Cat & src) : Animal(src)
+AAnimal::AAnimal(std::string type): _type(type)
 {
 	
 }
 
-void Cat::makeSound() const
+AAnimal::AAnimal (AAnimal const & src)
 {
-	std::cout << "Miau" << std::endl;
+	*this = src;
 }
 
-Cat &Cat::operator=(Cat const & src)
+AAnimal::~AAnimal()
+{
+	
+}
+
+void AAnimal::setName(std::string type)
+{
+	_type = type;
+}
+std::string AAnimal::getType() const
+{
+	return (_type);
+}
+
+AAnimal &AAnimal::operator=(const AAnimal & src)
 {
 	if (this != &src)
 		this->_type = src._type;

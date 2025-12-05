@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 12:50:46 by carlos            #+#    #+#             */
-/*   Updated: 2025/07/15 11:38:38 by carlos           ###   ########.fr       */
+/*   Updated: 2025/12/05 09:53:28 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@ void Animal::makeSound() const
 	std::cout << "Animal sound" << std::endl;
 }
 
-void Animal::setName(std::string type)
-{
-	_type = type;
-}
 std::string Animal::getType() const
 {
 	return (_type);

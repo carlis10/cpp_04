@@ -6,24 +6,26 @@
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:21:31 by carlos            #+#    #+#             */
-/*   Updated: 2025/12/05 11:08:22 by cravegli         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:34:55 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
-	
+	std::cout << "Cat created" << std::endl;
+	this->_brain = new Brain();
 }
 
 Cat::~Cat()
 {
-
+	std::cout << "Cat deleted" << std::endl;
+	delete _brain;
 }
-Cat::Cat(const Cat & src) : Animal(src)
+Cat::Cat(const Cat & src) : AAnimal(src)
 {
-	
+	_brain = new Brain(*(src._brain));
 }
 
 void Cat::makeSound() const
@@ -34,6 +36,10 @@ void Cat::makeSound() const
 Cat &Cat::operator=(Cat const & src)
 {
 	if (this != &src)
+	{
+		delete _brain;
 		this->_type = src._type;
+		this->_brain = new Brain(*(src._brain));
+	}
 	return (*this);
 }

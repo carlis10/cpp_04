@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:20:44 by carlos            #+#    #+#             */
-/*   Updated: 2025/07/15 12:04:04 by carlos           ###   ########.fr       */
+/*   Updated: 2025/12/05 10:28:13 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ private:
 
 public:
 	Cat();
-	~Cat();
-	Cat(const Animal & src);
+	virtual ~Cat();
+	Cat(const Cat & src);
 	virtual void makeSound() const;
-	Cat &operator=(Animal const & src);
+	Cat &operator=(Cat const & src);
 };
 
 #endif

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 13:20:44 by carlos            #+#    #+#             */
-/*   Updated: 2025/12/05 10:41:58 by cravegli         ###   ########.fr       */
+/*   Created: 2025/07/14 13:03:26 by carlos            #+#    #+#             */
+/*   Updated: 2025/12/05 11:34:51 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef DOG_H
+# define DOG_H
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal
+class Dog : public AAnimal
 {
 private:
 	Brain *_brain;
 public:
-	Cat();
-	~Cat();
-	Cat(const Cat & src);
+	Dog();
+	~Dog();
+	Dog(const Dog & src);
 	virtual void makeSound() const;
-	Cat &operator=(Cat const & src);
+	Dog &operator=(Dog const & src);
 };
 
 #endif

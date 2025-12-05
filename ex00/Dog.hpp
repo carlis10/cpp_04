@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:03:26 by carlos            #+#    #+#             */
-/*   Updated: 2025/07/15 12:04:08 by carlos           ###   ########.fr       */
+/*   Updated: 2025/12/05 10:27:49 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ private:
 
 public:
 	Dog();
-	~Dog();
-	Dog(const Animal & src);
+	virtual ~Dog();
+	Dog(const Dog & src);
 	virtual void makeSound() const;
-	Dog &operator=(Animal const & src);
+	Dog &operator=(Dog const & src);
 };
 
 #endif

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 13:20:44 by carlos            #+#    #+#             */
-/*   Updated: 2025/12/05 10:41:58 by cravegli         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:16:06 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
+#ifndef WRONGCAT_H
+# define WRONGCAT_H
 # include <string>
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 private:
-	Brain *_brain;
+
 public:
-	Cat();
-	~Cat();
-	Cat(const Cat & src);
-	virtual void makeSound() const;
-	Cat &operator=(Cat const & src);
+	WrongCat();
+	~WrongCat();
+	WrongCat(const WrongCat & src);
+	WrongCat &operator=(WrongCat const & src);
 };
 
 #endif

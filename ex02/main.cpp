@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cravegli <cravegli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 13:20:44 by carlos            #+#    #+#             */
-/*   Updated: 2025/12/05 10:41:58 by cravegli         ###   ########.fr       */
+/*   Created: 2025/07/14 12:32:30 by carlos            #+#    #+#             */
+/*   Updated: 2025/12/05 11:37:38 by cravegli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-# define CAT_H
-# include <string>
-# include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-class Cat : public Animal
+int main()
 {
-private:
-	Brain *_brain;
-public:
-	Cat();
-	~Cat();
-	Cat(const Cat & src);
-	virtual void makeSound() const;
-	Cat &operator=(Cat const & src);
-};
 
-#endif
+	const Dog dog;
+	const Cat cat;
+
+	dog.makeSound();
+	cat.makeSound();
+	return 0;
+}
