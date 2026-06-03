@@ -1,8 +1,8 @@
-# CPP04 - Subtype Polymorphism, Abstract Classes & Interfaces
+# CPP04 - Subtype Polymorphism & Abstract Classes
 
 ## 📌 Descripción
 
-Este módulo profundiza en el uso de **polimorfismo en tiempo de ejecución**, clases abstractas e interfaces en C++.
+Este módulo profundiza en el uso de **polimorfismo en tiempo de ejecución** y clases abstractas en C++.
 
 El objetivo principal es entender cómo diseñar jerarquías de clases flexibles utilizando **herencia**, **funciones virtuales** y **destructores virtuales**.
 
@@ -11,7 +11,6 @@ El proyecto está dividido en tres ejercicios:
 - **ex00:** Polymorphism básico (Animal / WrongAnimal)
 - **ex01:** Deep Copy y gestión de memoria (Dog / Cat + Brain)
 - **ex02:** Clases abstractas (Animal se vuelve abstracta)
-- **ex03:** Interfaces (Materia / Character / MateriaSource)
 
 ---
 
@@ -20,7 +19,6 @@ El proyecto está dividido en tres ejercicios:
 - Polimorfismo de subtipos
 - Funciones virtuales
 - Clases abstractas
-- Interfaces en C++
 - Destructores virtuales
 - Deep copy vs shallow copy
 - Gestión de memoria dinámica
@@ -52,21 +50,12 @@ CPP04/
 │   └── Makefile
 │
 ├── ex02/
-│   ├── Animal.hpp
-│   ├── Dog.hpp
-│   ├── Cat.hpp
-│   ├── main.cpp
-│   └── Makefile
-│
-└── ex03/
-    ├── AMateria.hpp
-    ├── AMateria.cpp
-    ├── Ice.hpp
-    ├── Cure.hpp
-    ├── Character.hpp
-    ├── MateriaSource.hpp
+    ├── Animal.hpp
+    ├── Dog.hpp
+    ├── Cat.hpp
     ├── main.cpp
     └── Makefile
+
 ```
 
 ---
@@ -160,37 +149,8 @@ public:
 
 ---
 
-# 🧩 ex03 - Interfaces (Materia)
-
-## 🎯 Objetivo
-
-Implementar un sistema de “materias” inspirado en un RPG.
-
-### Componentes
-
-- `AMateria` (clase abstracta base)
-- `Ice` / `Cure` (implementaciones)
-- `Character` (inventario)
-- `MateriaSource` (factory / almacenamiento)
-
----
-
-## ⚔️ Ejemplo
-
-```cpp
-ICharacter* me = new Character("me");
-
-AMateria* ice = new Ice();
-me->equip(ice);
-
-me->use(0, *enemy);
-```
-
----
-
 ## 🧠 Conceptos clave
 
-- Interfaces puras
 - Factory pattern
 - Inventario dinámico
 - Polimorfismo avanzado
@@ -203,7 +163,6 @@ me->use(0, *enemy);
 cd ex00 && make
 cd ex01 && make
 cd ex02 && make
-cd ex03 && make
 ```
 
 ---
@@ -222,11 +181,6 @@ cd ex03 && make
 ```bash
 ./abstract
 ```
-### ex03
-```bash
-./materia
-```
-
 ---
 
 ## 🧪 Compilación obligatoria
